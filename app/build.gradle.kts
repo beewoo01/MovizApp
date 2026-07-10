@@ -35,6 +35,17 @@ android {
     }
 }
 
+
+/*
+*
+* API 읽기 액세스 토큰
+* eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyYWMxYjRlYjUxZjljYmZiYWRkMjQ1NzVmOTIzYTI4ZiIsIm5iZiI6MTc4MzQ4MTAxNS44OTUsInN1YiI6IjZhNGRjMmI3ODU2ZmM3MmE1MWY5MDI3NCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.7pBIAvK4Ak35bnoLQ-OdLPlaBSKRhyENTaZN1sWhEfA
+*
+* API 키
+* 2ac1b4eb51f9cbfbadd24575f923a28f
+*
+* */
+
 dependencies {
     implementation(platform(libs.androidx.compose.bom))
     implementation(libs.androidx.activity.compose)
