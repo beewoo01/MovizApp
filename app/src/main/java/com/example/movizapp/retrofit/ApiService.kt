@@ -6,11 +6,6 @@ import retrofit2.http.Headers
 import retrofit2.http.Query
 
 interface ApiService {
-
-    @Headers(
-        "Accept : application/json",
-        "Accept : application/json"
-    )
     @GET("movie/popular")
-    suspend fun getPopularMovies() : MovieResponse
+    suspend fun getPopularMovies(): MovieResponse
 }
