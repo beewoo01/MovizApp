@@ -11,20 +11,30 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.ViewModelProvider
+import com.example.movizapp.repository.Repository
+import com.example.movizapp.screens.MovieScreen
 import com.example.movizapp.ui.theme.MovizAppTheme
+import com.example.movizapp.viewmodel.MovieViewModel
+import com.example.movizapp.viewmodel.MovieViewModelFactory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+
+        val repository = Repository()
+
+        val viewModelFactory = MovieViewModelFactory(repository)
+
+        val movieViewModel = ViewModelProvider(
+            this,
+            viewModelFactory
+        )[MovieViewModel::class.java]
+
         setContent {
             MovizAppTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                MovieScreen(viewModel = movieViewModel)
             }
         }
     }

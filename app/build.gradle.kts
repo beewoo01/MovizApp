@@ -71,6 +71,7 @@ dependencies {
 
     // Coil
     implementation(libs.coil.compose)
+    implementation(libs.coil.network.okhttp)
 
     // View Model
     implementation(libs.androidx.lifecycle.viewmodel.compose)
